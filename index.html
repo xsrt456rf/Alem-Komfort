@@ -10,12 +10,16 @@
             margin: 0;
             background-color: #f9f9f9;
             color: #333;
+            overflow-x: hidden;
         }
         header {
             background-color: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         header h1 {
             margin: 0;
@@ -34,6 +38,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 16px;
+            transition: 0.3s;
         }
         nav a:hover {
             color: #ff4444;
@@ -43,6 +48,9 @@
             color: white;
             text-align: center;
             padding: 120px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1.2s ease forwards;
         }
         .hero h2 {
             font-size: 36px;
@@ -52,9 +60,16 @@
             font-size: 18px;
         }
         section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             max-width: 1000px;
             margin: auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .services {
             display: flex;
@@ -69,12 +84,26 @@
             padding: 20px;
             flex: 1 1 280px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         footer {
             background-color: #222;
             color: white;
             text-align: center;
             padding: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        footer.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         a.instagram {
             color: #e4405f;
@@ -83,6 +112,12 @@
         }
         a.instagram:hover {
             text-decoration: underline;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -141,5 +176,18 @@
     <footer>
         © 2025 ALEM КОМФОРТ — Все права защищены
     </footer>
+
+    <script>
+        // Анимация при прокрутке
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('section, .service-card, footer').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
