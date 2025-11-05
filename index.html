@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALEM КОМФОРТ — сборка мебели на заказ</title>
+    <title>ALEM КОМФОРТ — сборка мебели на заказ в Астане</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Alem Komfort — профессиональная сборка и изготовление мебели на заказ в Астане. Качество, надёжность и индивидуальный подход.">
+    <meta name="keywords" content="сборка мебели, мебель на заказ, ремонт мебели, изготовление мебели, Alem Komfort, Астана">
+    <meta name="author" content="Alem Komfort">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ALEM КОМФОРТ — сборка мебели на заказ в Астане">
+    <meta property="og:description" content="Профессиональная сборка и изготовление мебели на заказ в Астане. Качество, надёжность, индивидуальный подход.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://azatdev.github.io/alem-komfort/">
+    <meta property="og:image" content="https://static.tildacdn.pro/tild6365-3130-4137-a366-386537313731/image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ALEM КОМФОРТ — сборка мебели на заказ в Астане">
+    <meta name="twitter:description" content="Профессиональная сборка и изготовление мебели на заказ в Астане. Качество, надёжность, индивидуальный подход.">
+    <meta name="twitter:image" content="https://static.tildacdn.pro/tild6365-3130-4137-a366-386537313731/image.jpg">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,18 +41,9 @@
             top: 0;
             z-index: 10;
         }
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-        .a { color: red; }
-        .lem { color: black; }
-        .komfort { color: red; }
-        nav {
-            background-color: #222;
-            text-align: center;
-            padding: 10px;
-        }
+        header h1 { margin: 0; font-size: 28px; }
+        .a { color: red; } .lem { color: black; } .komfort { color: red; }
+        nav { background-color: #222; text-align: center; padding: 10px; }
         nav a {
             color: white;
             text-decoration: none;
@@ -40,25 +51,26 @@
             font-size: 16px;
             transition: 0.3s;
         }
-        nav a:hover {
-            color: #ff4444;
-        }
+        nav a:hover { color: #ff4444; }
+
+        /* Геро-блок с фоновым слайдшоу */
         .hero {
-            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80') center/cover;
+            position: relative;
             color: white;
             text-align: center;
             padding: 120px 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeUp 1.2s ease forwards;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: contain; /* сохраняет пропорции */
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-image 1.5s ease-in-out;
         }
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 18px;
-        }
+        .hero h2 { font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; }
+
         section {
             padding: 60px 20px;
             max-width: 1000px;
@@ -67,10 +79,8 @@
             transform: translateY(40px);
             transition: all 1s ease;
         }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .visible { opacity: 1; transform: translateY(0); }
+
         .services {
             display: flex;
             flex-wrap: wrap;
@@ -88,10 +98,8 @@
             transform: translateY(50px);
             transition: all 1s ease;
         }
-        .service-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .service-card.visible { opacity: 1; transform: translateY(0); }
+
         footer {
             background-color: #222;
             color: white;
@@ -101,31 +109,15 @@
             transform: translateY(30px);
             transition: all 1s ease;
         }
-        footer.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        a.instagram {
-            color: #e4405f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a.instagram:hover {
-            text-decoration: underline;
-        }
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        footer.visible { opacity: 1; transform: translateY(0); }
+
+        a.instagram { color: #e4405f; text-decoration: none; font-weight: bold; }
+        a.instagram:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <header>
-        <h1>
-            <span class="a">A</span><span class="lem">LEM</span> <span class="komfort">КОМФОРТ</span>
-        </h1>
+        <h1><span class="a">A</span><span class="lem">LEM</span> <span class="komfort">КОМФОРТ</span></h1>
         <p>Сборка и изготовление мебели на заказ</p>
     </header>
 
@@ -160,34 +152,46 @@
 
     <section id="onas">
         <h2>О нас</h2>
-        <p>Компания <b>ALEM КОМФОРТ</b> специализируется на сборке и изготовлении мебели с 2015 года. Мы ценим точность, качество и доверие клиентов.</p>
+        <p>Компания <b>ALEM КОМФОРТ</b> специализируется на сборке и изготовлении мебели с 2015 года в Астане. Мы ценим точность, качество и доверие клиентов.</p>
     </section>
 
     <section id="kontakty">
         <h2>Контакты</h2>
         <p>📞 Телефон: <b><a href="tel:+77772795999" style="color:inherit; text-decoration:none;">+7 777 279 5999</a></b></p>
         <p>📸 Instagram: 
-            <a class="instagram" href="https://www.instagram.com/alem_komfort_astana?igsh=MWw0djVvOGJocGdrbQ==" target="_blank">
-                @alem_komfort_astana
-            </a>
+            <a class="instagram" href="https://www.instagram.com/alem_komfort_astana/" target="_blank">@alem_komfort_astana</a>
         </p>
     </section>
 
-    <footer>
-        © 2025 ALEM КОМФОРТ — Все права защищены
-    </footer>
+    <footer>© 2025 ALEM КОМФОРТ — Все права защищены</footer>
 
     <script>
         // Анимация при прокрутке
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if(entry.isIntersecting){ entry.target.classList.add('visible'); }
             });
         }, { threshold: 0.2 });
-
         document.querySelectorAll('section, .service-card, footer').forEach(el => observer.observe(el));
+
+        // Фоновое слайдшоу геро-блока
+        const slides = [
+            "https://static.tildacdn.pro/tild6365-3130-4137-a366-386537313731/image.jpg",
+            "https://kromvel.kz/assets/images/krom/furniture/sborka-mebeli-3-min.jpg",
+            "https://frankfurt.apollo.olxcdn.com/v1/files/tck9ckxs4wgq2-KZ/image%3Bs%3D1920x1280",
+            "https://expertremonta.kz/img/blog/ozfAVcU5_90vQodL8SSjrTcgx5LxXCbzaUjRaaOXvDJ9bKaeD.png",
+            "https://kromvel.kz/assets/cache_image/krom/furniture/sborka-mebeli-3-min_500x333_913.jpg",
+            "https://kromvel.kz/assets/images/krom/furniture/sborka-mebeli-1-min.jpg"
+        ];
+
+        let current = 0;
+        const hero = document.querySelector('.hero');
+        hero.style.backgroundImage = `url(${slides[0]})`;
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            hero.style.backgroundImage = `url(${slides[current]})`;
+        }, 5000);
     </script>
 </body>
 </html>
