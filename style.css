@@ -1,0 +1,173 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background: #f9f9f9; 
+    color: #333; 
+    overflow-x: hidden; 
+}
+
+header { 
+    background: #fff; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    padding: 20px; 
+    text-align: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 10; 
+}
+
+header h1 { 
+    margin: 0; 
+    font-size: 28px; 
+}
+
+.a { color: red; }
+.lem { color: black; }
+.komfort { color: red; }
+
+nav { 
+    background: #222; 
+    text-align: center; 
+    padding: 10px; 
+}
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-size: 16px; 
+    transition: 0.3s; 
+}
+
+nav a:hover { 
+    color: #ff4444; 
+}
+
+/* Геро-блок с адаптивным слайдшоу */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.35); /* тёмная накладка для читаемости текста */
+    z-index: 1;
+}
+
+.hero h2, .hero p { 
+    position: relative; 
+    z-index: 2; 
+    margin: 0; 
+}
+
+.hero h2 { 
+    font-size: 36px; 
+    margin-bottom: 10px; 
+}
+
+.hero p { 
+    font-size: 18px; 
+}
+
+section { 
+    padding: 60px 20px; 
+    max-width: 1000px; 
+    margin: auto; 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: all 1s ease; 
+}
+
+.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.services { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+}
+
+.service-card { 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    padding: 20px; 
+    flex: 1 1 280px; 
+    text-align: center; 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: all 1s ease; 
+}
+
+.service-card.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+footer { 
+    background: #222; 
+    color: white; 
+    text-align: center; 
+    padding: 15px; 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease; 
+}
+
+footer.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+a.instagram { 
+    color: #e4405f; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+a.instagram:hover { 
+    text-decoration: underline; 
+}
+
+.phone-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Кнопка WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover { 
+    background: #1ebe5b; 
+}
